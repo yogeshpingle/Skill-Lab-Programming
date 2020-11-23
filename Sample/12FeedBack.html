@@ -1,0 +1,272 @@
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<script language="JavaScript">
+
+// Validation for Comments
+
+function comment()
+{
+	var p
+	p = document.myform.comments.value
+	if(p == "")
+	{
+		alert("Please put your comments")
+		return true
+	}
+	else
+	{
+	}
+	document.myform.comments.focus()
+	return false
+}	
+
+
+
+// Validation for name
+
+function fname1()
+{
+	var s
+	var l1
+	s = document.myform.fname.value
+	l1 = s.length
+	for(var i = 0;i < l1; i++)
+	{
+		if((s.charCodeAt(i) > 64 && s.charCodeAt(i) < 91) ||
+		(s.charCodeAt(i) > 96 && s.charCodeAt(i) < 123) ||
+		(s.charCodeAt(i) == 45 ) || (s.charCodeAt(i) == 46) ||
+		(s.charCodeAt(i) == 95) || (s.charCodeAt(i) == ""))
+		{
+		}
+		else
+		{
+			alert("Please enter the valid First name")
+			return true
+		}		
+	}
+	return false
+}
+
+function fname2()
+{
+	var p
+	p = document.myform.fname.value
+	if(p == "")
+	{
+		alert("First Name should not be empty")
+		return true
+	}
+	else
+	{
+	}
+	document.myform.fname.focus()
+	return false
+}	
+
+// Validation for E - mail ID
+
+function email1()
+{
+	var q
+	var l2
+	q = document.myform.email.value
+	l2 = q.length
+		if(q == "")
+		{
+			alert("Email should not be empty")
+			document.myform.email.focus()
+			return false
+		}
+		if(q.indexOf("@") == 0)
+		{	
+			alert("Please enter the Valid email id")
+			return false
+		}
+	
+		for(var i = 0;i < l2.length; i++)
+		{
+			if(q.charCodeAt(i) != 64)
+			{
+				alert("@ must be there")
+				return true
+			}
+			return false
+		}
+
+		if((q.charCodeAt(i) > 64 && q.charCodeAt(i) < 91) ||
+		(q.charCodeAt(i) > 96 && q.charCodeAt(i) < 123) ||
+		(q.charCodeAt(i) == 45 ) || (q.charCodeAt(i) == 46) ||
+		(q.charCodeAt(i) == 95) || (q.charCodeAt(i) == "") ||
+		(q.charCodeAt(i)>47 && q.charCodeAt(i) <58 ))
+		{
+		}
+		else 
+		{
+			alert("invalid character")
+			return true
+		}
+	
+		if(q.charAt(q.length-1) == ".")
+		{
+			alert("Email ID should not be end with '.'")
+			return true
+		}	
+			
+		if(q.charAt(q.length-1) == "@")
+		{
+			alert("Email ID should not be end with '@'")
+			return true
+		}	
+
+	return false
+}
+
+// Validation for Telephone Number
+
+function telno1()
+{
+	var t
+	t = document.myform.telno.value
+	if(t == "")
+	{
+		alert("Tel. No. Should not be empty")
+		return true
+	}
+	document.myform.telno.focus()
+	return false
+}
+
+function telno2()
+{
+	var t1
+	t1 = document.myform.telno.value
+	l3 = t1.length
+	for(var i = 1;i < l3; i++)
+	{
+		if((t1.charCodeAt(i) > 64 && t1.charCodeAt(i) < 91) ||
+		(t1.charCodeAt(i) > 96 && t1.charCodeAt(i) < 123) ||
+		(t1.charCodeAt(i) == 45 ) || (t1.charCodeAt(i) == 46) ||
+		(t1.charCodeAt(i) == 95) || (t1.charCodeAt(i) == ""))
+		{
+			alert("Tel. No. Numeric only")
+			return true
+		}
+		else
+		{
+		}
+	}
+	return false
+}
+
+// Validation for Fax
+
+function fax1()
+{
+	var f1
+	f1 = document.myform.fax.value
+	l3 = f1.length
+	for(var i = 1;i < l3; i++)
+	{
+		if((f1.charCodeAt(i) > 64 && f1.charCodeAt(i) < 91) ||
+		(f1.charCodeAt(i) > 96 && f1.charCodeAt(i) < 123) ||
+		(f1.charCodeAt(i) == 45 ) || (f1.charCodeAt(i) == 46) ||
+		(f1.charCodeAt(i) == 95) || (f1.charCodeAt(i) == ""))
+		{
+			alert("Fax must be Numeric only")
+			return true
+		}
+		else
+		{
+		}
+		return false
+	}
+	return false
+}
+
+// Main function
+
+function check()
+{	
+
+	if(comment(document.myform.comments.value))
+	{
+		return false
+	}
+
+	if(fname1(document.myform.fname.value))
+	{
+		return false
+	}
+
+	if(fname2(document.myform.fname.value))
+	{
+		return false
+	}
+
+	if(email1(document.myform.email.value))
+	{
+		return false
+	}
+	if(telno1(document.myform.telno.value))
+	{
+		return false
+	}
+	
+	if(telno2(document.myform.telno.value))
+	{
+		return false
+	}
+
+	if(fax1(document.myform.fax.value))
+	{
+		return false
+	}
+
+	return true;
+}
+
+</Script>
+
+</HEAD>
+
+<BODY BGCOLOR="#CCCCCC">
+<APPLET CODE=AnimText WIDTH=550 HEIGHT=76>
+	<PARAM NAME=text VALUE="Ezee Shopping">
+	<PARAM NAME=type VALUE=wave>
+	<PARAM NAME=bgColor VALUE=0:0:0>
+	<PARAM NAME=fgColor VALUE=red>
+	<PARAM NAME=style VALUE=BOLD>
+	<PARAM NAME=min VALUE=14>
+	<PARAM NAME=max VALUE=48>
+</APPLET>
+<FORM METHOD = "POST" ACTION= "http://127.0.0.1:8080/Sample/servlet/FeedBackServlet" NAME="myform"
+onSubmit="return check()">
+  <p><strong>Enter your comments in the space provided below:</strong></p>
+  <dl>
+    <dd><textarea name="comments" rows="5" cols="42" maxlength="60"></textarea></dd>
+  </dl>
+  <p><strong>Tell us how to get in touch with you:</strong></p>
+  <dl>
+    <dd><pre>Name     <input type="text" size="35" maxlength="30" name="fname">
+E-mail   <input
+type="text" size="35" maxlength=" 30" name="email">
+Tel      <input type="text" size="17"
+maxlength="15" name="telno">
+FAX      <input type="text" size="17" maxlength="15"
+name="fax"> </pre>
+    </dd>
+  </dl>
+  <p><input type="submit" value="Submit Comments"> <input type="reset" value="Clear Form"></p>
+</form>
+
+<hr>
+
+<h5>Yogesh 's Project<br>
+Copyright &copy; 2020 [MyPy Company]. All rights reserved.<br>
+</h5>
+</body>
+</html>
+</FORM>
+</BODY>
+</HTML>
